@@ -1,6 +1,6 @@
 import axios from "axios";
 import { tokenConfig } from "../tokenConfig";
-const API_URL = "http://localhost:5000/api/user/";
+const API_URL = "https://social-nn06.onrender.com/api/user/";
 
 axios.defaults.withCredentials = true;
 
@@ -32,8 +32,7 @@ const updateUser = async (userData) => {
   return data;
 };
 const updateCoverImage = async (userData, token) => {
- 
-  console.log(userData)
+  console.log(userData);
 
   const config = {
     headers: {
@@ -42,9 +41,9 @@ const updateCoverImage = async (userData, token) => {
     params: {},
   };
 
-   if (token) {
-     config.headers["Authorization"] = `Bearer ${token}`;
-   }
+  if (token) {
+    config.headers["Authorization"] = `Bearer ${token}`;
+  }
   const { data } = await axios.put(
     `${API_URL}auth/coverImage`,
     userData,

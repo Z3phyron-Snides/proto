@@ -1,6 +1,6 @@
 import axios from "axios";
 import { tokenConfig } from "../tokenConfig";
-const API_URL = "http://localhost:5000/api/user/";
+const API_URL = "https://social-nn06.onrender.com/api/user/";
 
 axios.defaults.withCredentials = true;
 
@@ -55,8 +55,11 @@ const getUserProfile = async (id, token) => {
 };
 
 const getUserMedia = async (id, token) => {
-  let params = {id}
-  const { data } = await axios.get(`${API_URL}/medias`, tokenConfig(token, params));
+  let params = { id };
+  const { data } = await axios.get(
+    `${API_URL}/medias`,
+    tokenConfig(token, params)
+  );
 
   return data;
 };
@@ -67,7 +70,7 @@ const userService = {
   updateUser,
   getUserProfile,
   updateCoverImage,
-  getUserMedia
+  getUserMedia,
 };
 
 export default userService;

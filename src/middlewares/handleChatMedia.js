@@ -3,14 +3,14 @@ const { v4: uuidv4 } = require("uuid");
 const path = require("path");
 
 const handleChatMedia = async (req, res, next) => {
-  const host = "http://localhost:5000/uploads/";
+  const host = "https://social-nn06.onrender.com/uploads/";
   const file = req.file;
 
   if (!file) {
     return next();
   }
 
-  console.log(req.file)
+  console.log(req.file);
 
   if (
     !file.mimetype.startsWith("image") &&

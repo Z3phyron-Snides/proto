@@ -3,9 +3,9 @@ const { v4: uuidv4 } = require("uuid");
 const path = require("path");
 
 const handleMedia = async (req, res, next) => {
-  const host = "http://localhost:5000/uploads/";
+  const host = "https://social-nn06.onrender.com/uploads/";
   const files = req.files;
-//   console.log(files.videos);
+  //   console.log(files.videos);
   let reqFiles = [];
   let promises = [];
 
@@ -43,8 +43,8 @@ const handleMedia = async (req, res, next) => {
       promises.push(file.mv(savePath));
     });
   });
-    
-    // console.log(reqFiles)
+
+  // console.log(reqFiles)
 
   req.media = reqFiles;
   next();

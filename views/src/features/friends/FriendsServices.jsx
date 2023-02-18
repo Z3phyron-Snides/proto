@@ -1,27 +1,31 @@
 import axios from "axios";
 import { tokenConfig } from "../tokenConfig";
-const API_URL = "http://localhost:5000/api/friends/";
+const API_URL = "https://social-nn06.onrender.com/api/friends/";
 
 axios.defaults.withCredentials = true;
 
-const getFriends = async ( token) => {
-
-  const { data } = await axios.get(`${API_URL}`, tokenConfig(token,null));
+const getFriends = async (token) => {
+  const { data } = await axios.get(`${API_URL}`, tokenConfig(token, null));
 
   return data;
 };
 
-const getRequests = async ( token) => {
-
-  const { data } = await axios.get(`${API_URL}requests`, tokenConfig(token,null));
+const getRequests = async (token) => {
+  const { data } = await axios.get(
+    `${API_URL}requests`,
+    tokenConfig(token, null)
+  );
 
   return data;
 };
 
 const sendRequest = async (id, token) => {
-  console.log(token)
+  console.log(token);
   let params = { id };
-  const { data } = await axios.get(`${API_URL}send`, tokenConfig(token, params));
+  const { data } = await axios.get(
+    `${API_URL}send`,
+    tokenConfig(token, params)
+  );
 
   return data;
 };

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { tokenConfig } from "../tokenConfig";
-const API_URL = "http://localhost:5000/api/post/";
+const API_URL = "https://social-nn06.onrender.com/api/post/";
 
 axios.defaults.withCredentials = true;
 
@@ -95,7 +95,7 @@ const postService = {
   likePost,
   commentPost,
   updateComment,
-  delComment
+  delComment,
 };
 
 export default postService;

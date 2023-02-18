@@ -1,7 +1,7 @@
 import axios from "axios";
 import { tokenConfig } from "../tokenConfig";
 
-const API_URL = "http://localhost:5000/api/chat/";
+const API_URL = "https://social-nn06.onrender.com/api/chat/";
 
 axios.defaults.withCredentials = true;
 
@@ -58,7 +58,6 @@ const createMessage = async (convo, token) => {
 
   return data;
 };
-
 
 const getMessagesByConversationId = async (conversationId, token) => {
   let params = { id: conversationId };
